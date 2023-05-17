@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import Image from "next/image";
 
 const categories = [
@@ -5,14 +6,16 @@ const categories = [
   { name: "Shirts", image: "/shirts.jpg" },
   { name: "Pants", image: "/pants.jpg" },
   { name: "Pants", image: "/pants.jpg" },
+  { name: "Shirts", image: "/shirts.jpg" },
+  { name: "Pants", image: "/pants.jpg" },
+  { name: "Pants", image: "/pants.jpg" },
+  { name: "Shirts", image: "/shirts.jpg" },
+  { name: "Pants", image: "/pants.jpg" },
+  { name: "Pants", image: "/pants.jpg" },
 ];
 export default function Home() {
   return (
     <main className="h-screen flex flex-col items-stretch">
-      <header className="flex bg-primary text-bg text-4xl justify-between px-3">
-        <h3>TLK</h3>
-        <button>UP</button>
-      </header>
       <section className="gender">
         <button className="active">MEN</button>
         <button className="btn-primary">WOMEN</button>

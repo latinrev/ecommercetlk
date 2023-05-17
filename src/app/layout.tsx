@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import "./globals.css";
 import { Cormorant } from "next/font/google";
 
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={cormorant.className}>{children}</body>
+      <body className={cormorant.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

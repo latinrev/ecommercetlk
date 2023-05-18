@@ -30,7 +30,7 @@ export default function Home() {
       <section className="categories flex h-full text-secondary overflow-x-scroll">
         {categories.map((category) => (
           <figure className="w-1/3 flex-shrink-0 relative" key={category.name}>
-            <Image src={category.image} width={0} height={0} alt="" sizes="100vw" className="w-full h-full object-cover" />
+            <Image src={category.image} width={0} height={0} alt="" sizes="100vw" className="w-full h-full object-cover " />
             <figcaption className="absolute bottom-0 text-center w-full bg-bg bg-opacity-60">{category.name.toUpperCase()}</figcaption>
           </figure>
         ))}

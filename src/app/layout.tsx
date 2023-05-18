@@ -12,9 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={cormorant.className}>
+      <body className={`${cormorant.className}  h-screen flex flex-col `}>
         <Header />
-        {children}
+        <div className="flex-grow">{children}</div>
       </body>
     </html>
   );

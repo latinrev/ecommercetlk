@@ -15,7 +15,7 @@ const categories = [
 ];
 export default function Home() {
   return (
-    <main className="h-screen flex flex-col items-stretch">
+    <main className=" flex flex-col h-full">
       <section className="gender">
         <button className="active">MEN</button>
         <button className="btn-primary">WOMEN</button>

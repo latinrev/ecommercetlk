@@ -67,7 +67,7 @@ export default function Catalog() {
       .filter((product) => (category === "ALL" ? product : product.category === category));
   }, [category, filterDescending]);
   return (
-    <section className="catalog h-screen w-screen bg-bg">
+    <section className="catalog w-screen bg-bg">
       <div className="categories text-primary bg-bg h-11 text-4xl px-2 flex justify-between">
         <SelectClient
           onChange={(s) => {

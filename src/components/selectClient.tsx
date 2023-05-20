@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface Select {
@@ -7,28 +8,27 @@ interface Select {
     value: string;
   }[];
   onChange: (value: string) => void;
+  defaultValue: string;
 }
-export default function SelectClient({ options, onChange }: Select) {
-  const [selectedElement, setSelectedElement] = useState(options[0].label);
+export default function SelectClient({ options, onChange, defaultValue }: Select) {
+  const [selectedElement, setSelectedElement] = useState(defaultValue);
   const [active, setActive] = useState(false);
-  useEffect(() => {
-    onChange(selectedElement);
-  }, [selectedElement]);
+
   return (
     <div
-      className="select-container flex gap-2"
+      className="select-container flex gap-2 text-sm"
       onClick={() => {
         setActive(!active);
       }}>
-      <ul className="Select z-30">
-        <li className="">{selectedElement}</li>
+      <ul className="Select z-30 text-sm  ">
+        <li className="h-full flex items-center">{selectedElement}</li>
         {options.map(({ value, label }) => (
           <li key={value} className={`${!active ? "hidden" : ""} bg-bg p-5`} onClick={() => setSelectedElement(value.toUpperCase())}>
-            {label}
+            <Link href={`catalog?category=${value}`}>{label}</Link>
           </li>
         ))}
       </ul>
-      <div className={`${active ? "hidden" : ""}`}>D</div>
+      <div className={`${active ? "hidden" : ""} flex items-center`} >D</div>
     </div>
   );
 }
